@@ -6,4 +6,4 @@ This is just a simple website.
 @Date: 2018-11-22
 
 git is a good thing. Hope you get it.
-from branch master
+from branch feature
