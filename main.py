@@ -15,7 +15,8 @@ sys.path.append("/home/ubuntu/web")
  
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-		self.render("index.html")
+		#self.render("index.html")
+		self.render("tutorial.html")
  
 application = tornado.web.Application([
     (r"/", MainHandler),
