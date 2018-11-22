@@ -5,5 +5,4 @@ This is just a simple website.
 @GitHub: chen950816
 @Date: 2018-11-22
 
-git is a good thing. Hope you get it.
-from branch feature
+Develop Environment For Web Project
