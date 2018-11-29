@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding:utf-8 -*-
 
 # This website is written for Xu Shaona's birthday at 2018/12/15
 # @author: Chen Zhilei
@@ -18,14 +18,15 @@ import multiprocessing
 from config.routes import GetRoutes
 
 def _ReadConfig( config_file_path ):
-	define( "app_ip", type = str, default = "127.0.0.1", help = "The IP this app listen", metavar = "IP" )
-	define( "app_port", type = int, default = 80, help = "The port this app listen", metavar = "Port" )
-	define( "app_name", type = str, default = "web", help = "The app name" )
-	define( "max_proc_count", type = int, default = 3, help = "Max process count" )
+	define( "app_ip", 			type = str, default = "127.0.0.1", 	help = "The IP this app listen", 	metavar = "IP" )
+	define( "app_port", 		type = int, default = 80, 			help = "The port this app listen", 	metavar = "Port" )
+	define( "app_name", 		type = str, default = "web", 		help = "The app name" )
+	define( "max_proc_count", 	type = int, default = 3, 			help = "Max process count" )
 
 	tornado.options.parse_config_file( config_file_path )
 
 _ReadConfig( "/home/ubuntu/web/etc/web.conf" )
+
 
 def Main():
 	application = tornado.web.Application( GetRoutes(), **settings )

@@ -1,13 +1,11 @@
 #!/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding:utf-8 -*-
 
 import sys
 import torndb
-sys.path.append("../")
-
 import database
 
-from cmd import *
+class BusinessDB(object):
+	def initialize(self):
+		self.conn = torndb.Connection( **database.DATABASE["web"] )
 
-def SayHello():
-	print "hello"

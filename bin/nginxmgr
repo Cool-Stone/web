@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# kill nginx
+function Stop() {
+	local current=`ps aux | egrep "nginx: [a-z]{6} process" | grep -v 'grep' | awk '{ print $2 }'`
+	for id in $current; do
+		echo "Killing Process ID: ${id}";
+		sudo kill -9 ${id};
+	done
+}
+
+# restart
+function Start() {
+	sudo nginx -c /home/ubuntu/web/nginx/conf/nginx.conf
+}
+
+function Helper() {
+	echo "Usage: $1 <start | stop | restart>"
+}
+
+if [[ $# != 1 ]]; then
+	Helper $0
+	exit 1
+else
+	case "$1" in
+		"start")
+			Start
+			;;
+		"stop")
+			Stop
+			;;
+		"restart")
+			Stop
+			Start
+			;;
+		*)
+			Helper $0
+			exit 1
+			;;
+	esac
+fi
