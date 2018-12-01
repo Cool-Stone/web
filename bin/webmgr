@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# check
+function Check() {
+	local current=`ps aux | grep 'main.py' | grep -v 'grep' | wc -l`
+	if [[ $current -gt 0 ]]; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+# kill old server
+function Stop() {
+	local current=`ps aux | grep 'main.py' | grep -v 'grep' | awk '{ print $2 }'`
+	for id in $current; do
+		echo "Killing Process ID: ${id}";
+		sudo kill -9 ${id};
+	done
+	Check
+	if [[ $? -eq 0 ]]; then
+		echo -e "[\e[32m OK \e[0m] stop web success"
+	else
+		echo -e "[\e[31m FAILED \e[0m] stop web fail"
+	fi
+}
+
+# restart
+function Start() {
+	sudo nohup python /home/ubuntu/web/main.py >/home/ubuntu/web/bin/nohup.out &
+	Check
+	if [[ $? -eq 1 ]]; then
+		echo -e "[\e[32m OK \e[0m] start web success"
+	else
+		echo -e "[\e[31m FAILED \e[0m] start web fail"
+	fi
+}
+
+# status
+function Status() {
+	Check
+	if [[ $? -eq 1 ]]; then
+		echo -e "[\e[32m Running \e[0m] web is running"
+	else
+		echo -e "[\e[31m Stopped \e[0m] web is stopped"
+	fi
+}
+
+# print helper
+function Helper() {
+	echo "Usage: $1 <start | stop | restart | status>"
+}
+
+if [[ $# != 1 ]]; then
+	Helper $0
+	exit 1
+else
+	case "$1" in
+		"start")
+			Start
+			;;
+		"stop")
+			Stop
+			;;
+		"restart")
+			Stop
+			Start
+			;;
+		"status")
+			Status
+			;;
+		*)
+			Helper $0
+			exit 1
+			;;
+	esac
+fi
+	

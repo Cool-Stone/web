@@ -5,4 +5,8 @@ This is just a simple website.
 @GitHub: chen950816
 @Date: 2018-11-22
 
+<<<<<<< HEAD
 Master Branch For Web Project
+=======
+Develop Environment For Web Project
+>>>>>>> dev

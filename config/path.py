@@ -7,7 +7,7 @@ import sys
 conf_dir = os.path.dirname( os.path.realpath( __file__ ) )
 app_root = os.path.dirname( conf_dir )
 
-app_sub_dir_names = ( "controllers", "logics", "libraries", "models", "config" )
+app_sub_dir_names = ( "controllers", "libraries", "config" )
 for sub_dir_name in app_sub_dir_names:
 	app_sub_dir = os.path.join( app_root, sub_dir_name )
 	sys.path.insert( 0, app_sub_dir )
