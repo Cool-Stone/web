@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
 # This website is written for Xu Shaona's birthday at 2018/12/15

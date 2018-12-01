@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- conding: UTF8 -*-
+# -*- coding:utf-8 -*-
 
 from tornado.web import RequestHandler
 from log import logger

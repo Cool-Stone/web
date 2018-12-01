@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# -*- coding: UTF8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 
 from config.path import *
 from base import BaseHandler
@@ -15,6 +15,9 @@ class IndexHandler(BaseHandler):
 		])
 
 	def Welcome(self):
+		#self.render("tutorial.html")
+		self.render("index.html")
+		return 0
 		args = self.request.arguments
 		if "user" in args:
 			self.write("Welcome to my website %s\n" % self.get_argument("user"))
