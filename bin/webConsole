@@ -27,7 +27,11 @@ function Stop() {
 
 # restart
 function Start() {
-	sudo nohup python /home/ubuntu/web/main.py >/home/ubuntu/web/bin/nohup.out &
+#sudo nohup python /home/ubuntu/web/main.py >/home/ubuntu/web/bin/nohup.out &
+	local nginx_path=`readlink -f ${0}`
+	local bin_path=`dirname ${nginx_path}`
+	local root=`dirname ${bin_path}`
+	sudo nohup python ${root}/main.py 2>/dev/null 1>&2 &
 	Check
 	if [[ $? -eq 1 ]]; then
 		echo -e "[\e[32m OK \e[0m] start web success"

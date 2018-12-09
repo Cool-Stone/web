@@ -5,16 +5,14 @@
 # @author: Chen Zhilei
 # @date: 2018/11/16
 
-from config.path import *
 
 import tornado
 import tornado.web
 import tornado.httpserver
-
+import multiprocessing
 from tornado.options import define, options
 
-import multiprocessing
-
+from config.path import *
 from config.routes import GetRoutes
 
 def _ReadConfig( config_file_path ):
