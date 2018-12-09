@@ -1,0 +1,17 @@
+[2018-12-09 00:47:32,039 log.py:24] -INFO- action is Welcome
+[2018-12-09 01:28:32,253 log.py:24] -INFO- action is Welcome
+[2018-12-09 02:12:24,886 log.py:24] -INFO- action is Welcome
+[2018-12-09 03:14:53,909 log.py:24] -INFO- action is Welcome
+[2018-12-09 03:19:36,183 log.py:24] -INFO- action is Welcome
+[2018-12-09 04:42:30,773 log.py:24] -INFO- action is Welcome
+[2018-12-09 05:07:07,477 log.py:24] -INFO- action is Welcome
+[2018-12-09 05:07:14,078 log.py:24] -INFO- action is Welcomeusers
+[2018-12-09 05:07:14,078 log.py:27] -ERROR- Get Unexpected Result Type: <type 'unicode'>
+[2018-12-09 05:07:14,078 log.py:27] -ERROR- Translate Result to String Failed
+[2018-12-09 07:09:17,935 log.py:24] -INFO- action is Welcome
+[2018-12-09 07:21:06,111 log.py:24] -INFO- action is Welcome
+[2018-12-09 07:46:39,729 log.py:24] -INFO- action is Welcome
+[2018-12-09 08:12:12,715 log.py:24] -INFO- action is Welcome
+[2018-12-09 11:12:34,034 log.py:24] -INFO- action is Welcome
+[2018-12-09 11:44:18,181 log.py:24] -INFO- action is Welcome
+[2018-12-09 16:21:20,539 log.py:24] -INFO- action is Welcome
