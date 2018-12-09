@@ -27,7 +27,10 @@ function Stop() {
 
 # restart
 function Start() {
-	sudo nginx -c /home/ubuntu/web/nginx/conf/nginx.conf
+	local nginx_path=`readlink -f ${0}`
+	local bin_path=`dirname ${nginx_path}`
+	local root=`dirname ${bin_path}`
+	sudo nginx -c ${root}/nginx/conf/nginx.conf
 	Check
 	if [[ $? -eq 1 ]]; then
 		echo -e "[\e[32m OK \e[0m] start nginx success"

@@ -15,8 +15,11 @@ class IndexHandler(BaseHandler):
 		])
 
 	def Welcome(self):
-		#self.render("tutorial.html")
-		self.render("index.html")
+		page = int(self.get_argument("page", "1"))
+		if page is 1:
+			self.render("tutorial.html")
+		else:
+			self.render("index.html")
 		return 0
 		args = self.request.arguments
 		if "user" in args:
